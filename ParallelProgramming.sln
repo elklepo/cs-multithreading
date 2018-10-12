@@ -3,35 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thread_Example", "Thread_Example\Thread_Example.csproj", "{1B843E90-EC22-49D9-8066-4344B403F915}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Thread", "Thread_Example\01_Thread.csproj", "{1B843E90-EC22-49D9-8066-4344B403F915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPool_Example", "ThreadPool_Example\ThreadPool_Example.csproj", "{95D2069D-B558-40BF-A434-143021FA9956}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ThreadPool", "ThreadPool_Example\02_ThreadPool.csproj", "{95D2069D-B558-40BF-A434-143021FA9956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_Example", "Task_Example\Task_Example.csproj", "{24C6F185-395F-48F5-A29E-D2F865BFEF93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Task", "Task_Example\03_Task.csproj", "{24C6F185-395F-48F5-A29E-D2F865BFEF93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate_Example", "Delegate_Example\Delegate_Example.csproj", "{7F3A9D03-0281-41E2-800C-8921206D1539}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Delegate", "Delegate_Example\12_Delegate.csproj", "{7F3A9D03-0281-41E2-800C-8921206D1539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async-Await_Example", "Async-Await_Example\Async-Await_Example.csproj", "{895F9930-22BE-4AD2-A3A0-226EFBF42F2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Async-Await", "Async-Await_Example\05_Async-Await.csproj", "{895F9930-22BE-4AD2-A3A0-226EFBF42F2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockingCollection_Example", "BlockingCollection_Example\BlockingCollection_Example.csproj", "{B4DE5A7D-B4B5-4987-9C9E-B93DC2C65E9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_BlockingCollection", "BlockingCollection_Example\07_BlockingCollection.csproj", "{B4DE5A7D-B4B5-4987-9C9E-B93DC2C65E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel-ForEach_Example", "Parallel-ForEach_Example\Parallel-ForEach_Example.csproj", "{82EDDFA7-6125-4212-8268-78B0BB6FD7E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Parallel-ForEach", "Parallel-ForEach_Example\09_Parallel-ForEach.csproj", "{82EDDFA7-6125-4212-8268-78B0BB6FD7E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plinq_Example", "Plinq_Example\Plinq_Example.csproj", "{09AA2DD3-D33C-4D44-901D-5D97F55F27AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_Plinq", "Plinq_Example\11_Plinq.csproj", "{09AA2DD3-D33C-4D44-901D-5D97F55F27AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interrupting-Tasks_Example", "Interrupting-Tasks_Example\Interrupting-Tasks_Example.csproj", "{A1F4285B-BD89-43D2-A07B-AC0326D1DCF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Interrupting-Tasks", "Interrupting-Tasks_Example\04_Interrupting-Tasks.csproj", "{A1F4285B-BD89-43D2-A07B-AC0326D1DCF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq_Example", "Linq_Example\Linq_Example.csproj", "{845AB930-2A06-476B-B040-E79289ACC605}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Linq", "Linq_Example\10_Linq.csproj", "{845AB930-2A06-476B-B040-E79289ACC605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadingWebPages", "DownloadingWebPages\DownloadingWebPages.csproj", "{AC578978-142E-4CB9-959A-B018F680A6A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_DownloadingWebPages", "DownloadingWebPages\06_DownloadingWebPages.csproj", "{AC578978-142E-4CB9-959A-B018F680A6A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonAndProgressBar", "ButtonAndProgressBar\ButtonAndProgressBar.csproj", "{A0DE901D-9FE2-4649-B7A9-BEEEAB0949E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_ButtonAndProgressBar", "ButtonAndProgressBar\08_ButtonAndProgressBar.csproj", "{A0DE901D-9FE2-4649-B7A9-BEEEAB0949E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source-Observer_Example", "Source-Observer_Example\Source-Observer_Example.csproj", "{2482C388-30B4-4453-A523-4C548621D182}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_Source-Observer", "Source-Observer_Example\13_Source-Observer.csproj", "{2482C388-30B4-4453-A523-4C548621D182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reactive_Example", "Reactive_Example\Reactive_Example.csproj", "{A88DD7CA-990E-47F3-B316-B4B9970BA8D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_Reactive_Example", "Reactive_Example\14_Reactive_Example.csproj", "{A88DD7CA-990E-47F3-B316-B4B9970BA8D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveFileWatcher", "ReactiveFileWatcher\ReactiveFileWatcher.csproj", "{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_ReactiveFileWatcher", "ReactiveFileWatcher\15_ReactiveFileWatcher.csproj", "{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_UndefinedBehaviour", "00_UndefinedBehaviour\00_UndefinedBehaviour.csproj", "{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

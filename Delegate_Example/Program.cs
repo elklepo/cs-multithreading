@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Linq;
 using System.Threading;
 
@@ -49,15 +49,6 @@ namespace Delegate_Example
 
             Console.WriteLine("Press key to exit...");
             Console.ReadKey();
-        }
-
-        static void DoWork()
-        {
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] starting work...");
-
-            Thread.Sleep(TimeSpan.FromSeconds(3));
-
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] ...finished");
         }
     }
 }

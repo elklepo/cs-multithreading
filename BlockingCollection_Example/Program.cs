@@ -27,7 +27,7 @@ namespace BlockingCollection_Example
         {
             foreach (var item in buff.GetConsumingEnumerable())
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"- {item}");
             }
             Console.WriteLine("Consumer finished.");
         }
@@ -37,6 +37,7 @@ namespace BlockingCollection_Example
             for (int i = 0; i < 10; i++)
             {
                 buff.Add(i);
+                Console.WriteLine($"+ {i}");
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
             }
             Console.WriteLine("Producer finished.");

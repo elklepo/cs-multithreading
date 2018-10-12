@@ -8,7 +8,7 @@ namespace Thread_Example
         static void Main(string[] args)
         {
             var t1 = new Thread(DoWork);
-            t1.IsBackground = true; // Main thread will not wait for this thread to finish.
+            //t1.IsBackground = true; // Main thread will not wait for this thread to finish.
 
             var t2 = new Thread(() => DoWork());
             t1.Start();

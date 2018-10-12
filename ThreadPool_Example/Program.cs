@@ -7,7 +7,7 @@ namespace ThreadPool_Example
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 ThreadPool.QueueUserWorkItem(DoWork, i);
             }
@@ -19,7 +19,7 @@ namespace ThreadPool_Example
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] starting work... {obj}");
 
-            Thread.Sleep(TimeSpan.FromMilliseconds(1));
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
 
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] ...finished");
         }

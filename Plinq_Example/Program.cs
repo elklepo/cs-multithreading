@@ -18,8 +18,9 @@ namespace Plinq_Example
             var cs = "abcdefgh"
                 .AsParallel()
                 .AsOrdered()
-                .Select(c => foo(c))
-                .AsSequential();
+                .Select(c => foo(c));
+
+
             Console.WriteLine(new string(cs.ToArray()));
             // if .OrderBy are stacked - last wins e.g.:
             // ...
@@ -50,6 +51,8 @@ namespace Plinq_Example
         private static char foo(char c)
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] {c}");
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            Console.WriteLine($"{c}, done");
             return c;
         }
 

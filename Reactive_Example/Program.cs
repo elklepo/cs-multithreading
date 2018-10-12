@@ -28,28 +28,21 @@ namespace Reactive_Example
             var source = new ReplaySubject<int>(NewThreadScheduler.Default);
             baseSource.Subscribe(source);
 
-            //var sub1 = source.Subscribe(item => Console.WriteLine($"+++>[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"));
+            var sub1 = source.Subscribe(item => Console.WriteLine($"+++>[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"));
 
             // FILTROWANIE
-            //var filtered = source
-            //    .Where(n => n > 20)
-            //    .Where(n => n < 50);
-            //filtered.Subscribe(item => Console.WriteLine($"--->[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"));
+            var filtered = source
+                .Where(n => n > 20)
+                .Where(n => n < 50);
+            filtered.Subscribe(item => Console.WriteLine($"--->[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"));
 
-            var buffered = source.Buffer(TimeSpan.FromSeconds(5)); //.Buffer(xxxx, 1); for 1 elem shift. xxxx can be number of elements or TimeSpan
+            var buffered = source.Buffer(3); //.Buffer(xxxx, 1); for 1 elem shift. xxxx can be number of elements or TimeSpan
             buffered.Subscribe(item => Console.WriteLine($"===>[{Thread.CurrentThread.ManagedThreadId}] Received: {String.Join(", ", item)}"));
 
-            var windowed = source.Window(3);
-            windowed.Subscribe(window => window.Subscribe(item => Console.WriteLine(item)));
-
-
-            //"awdgb".ToObservable()
+            //"awdgbwe3houerfwe4gfvwsedfcjhasd;'lkjwdfnadckvNISdmazs:dnkdsnfgpoWSDAlskn"
+            //    .ToObservable()
             //    .Buffer(3)
-            //    .Throttle(TimeSpan.FromMilliseconds(300));
-
-            //NotifyCollectionChnged ?!
-
-
+            //    .Subscribe(item => Console.WriteLine($"ebe>[{Thread.CurrentThread.ManagedThreadId}] Received: {String.Join(", ", item)}"));
         }
 
         private static void SubjectSample()

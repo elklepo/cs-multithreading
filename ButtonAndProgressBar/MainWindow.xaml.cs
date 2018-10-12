@@ -33,11 +33,6 @@ namespace ButtonAndProgressBar
             bCalculate.IsEnabled = true;
         }
 
-        private Task CalculateAsync()
-        {
-            return Task.Run(() => Calculate());
-        }
-
         private void Calculate()
         {
             for (int i = 0; i <= 100; i++)
@@ -50,5 +45,10 @@ namespace ButtonAndProgressBar
 
             }
         }
+        private Task CalculateAsync()
+        {
+            return Task.Run(() => Calculate());
+        }
+
     }
 }

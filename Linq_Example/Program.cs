@@ -59,7 +59,7 @@ namespace Linq_Example
             lPerson.Add(new Person()
             {
                 m_name = "Adam",
-                m_lastName = "Rokacz",
+                m_lastName = "Rogacz",
                 m_birthDate = new DateTime(1994, 11, 25),
                 m_gender = Person.Gender.Male
             });

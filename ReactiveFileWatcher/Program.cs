@@ -35,9 +35,6 @@ namespace ReactiveFileWatcher
 
             created.Subscribe(file => Console.WriteLine($"Created: {file.Name}"));
             deleted.Subscribe(file => Console.WriteLine($"Deleted: {file.Name}"));
-
-            //var both = created.Concat(deleted); // deleted will enable when created will disable.
-            //var both = created.Merge(deleted); // both work
             var both = Observable.Merge(created, deleted); //also both work, can pass collection here
             both.Subscribe(file => Console.WriteLine($"Both: {file.Name}"));
 

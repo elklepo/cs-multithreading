@@ -8,6 +8,8 @@ namespace Task_Example
     {
         static void Main(string[] args)
         {
+            //TaskCreationOptions
+
             var t1 = new Task(DoWork);
             t1.Start();
             var t2 = new Task(() => Strlen("hi"));
@@ -45,7 +47,7 @@ namespace Task_Example
 
             Thread.Sleep(TimeSpan.FromSeconds(3));
 
-            //Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] ...finished");
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] ...finished");
         }
     }
 }
