@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _00_UndefinedBehaviour
+namespace UndefinedBehaviour_Example
 {
     /*
      * Based on my question on StackOverflow:
@@ -16,7 +16,7 @@ namespace _00_UndefinedBehaviour
         {
             //try
             //{
-                MakeMess();
+            MakeMess();
             //}
             //catch
             //{

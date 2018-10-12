@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_Reactive_Example", "Reac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_ReactiveFileWatcher", "ReactiveFileWatcher\15_ReactiveFileWatcher.csproj", "{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_UndefinedBehaviour", "00_UndefinedBehaviour\00_UndefinedBehaviour.csproj", "{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_UndefinedBehaviour", "UndefinedBehaviour\00_UndefinedBehaviour.csproj", "{144AF288-60C9-4C74-9BB6-F7AB07201493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,10 +101,10 @@ Global
 		{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{144AF288-60C9-4C74-9BB6-F7AB07201493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144AF288-60C9-4C74-9BB6-F7AB07201493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144AF288-60C9-4C74-9BB6-F7AB07201493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144AF288-60C9-4C74-9BB6-F7AB07201493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

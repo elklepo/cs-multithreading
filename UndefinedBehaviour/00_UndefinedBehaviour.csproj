@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{76DA0089-F6B3-4458-A37D-B7B75CFF4E2A}</ProjectGuid>
+    <ProjectGuid>{144AF288-60C9-4C74-9BB6-F7AB07201493}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_00_UndefinedBehaviour</RootNamespace>
-    <AssemblyName>00_UndefinedBehaviour</AssemblyName>
+    <RootNamespace>UndefinedBehaviour</RootNamespace>
+    <AssemblyName>UndefinedBehaviour</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
