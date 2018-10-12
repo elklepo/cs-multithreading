@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -8,7 +9,15 @@ namespace Task_Example
     {
         static void Main(string[] args)
         {
-            //TaskCreationOptions
+            var list = new List<Task>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                list.Add(Task.Factory.StartNew(DoWork, TaskCreationOptions.LongRunning));
+            }
+
+            Task.WaitAll(list.ToArray());
+
 
             var t1 = new Task(DoWork);
             t1.Start();
@@ -30,6 +39,7 @@ namespace Task_Example
                             .ContinueWith(t => Console.WriteLine($"[{ Thread.CurrentThread.ManagedThreadId}] same"))
                             .ContinueWith(t => Console.WriteLine($"[{ Thread.CurrentThread.ManagedThreadId}] thread"));
 
+            t5.Wait();
             Console.WriteLine("Press key to exit...");
             Console.ReadKey();
         }

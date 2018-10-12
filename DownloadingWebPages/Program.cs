@@ -12,10 +12,11 @@ namespace DownloadingWebPages
             using (var cts = new CancellationTokenSource())
             {
                 var ct = cts.Token;
-                var t1 = TaskDownload.DownloadStringAsync("http://www.altkom.pl");
-                var t2 = TaskDownload.DownloadStringAsync("http://www.intel.com", ct);
+                var t1 = TaskDownload.DownloadStringAsync("http://www.altkom.pl", ct);
+                var t2 = TaskDownload.DownloadStringAsync("http://www.intel.com");
+                //Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 cts.Cancel();
-                Task.WaitAll();
+                Task.WaitAll(t1, t2);
                 Console.WriteLine("Altkom length: " + t1.Result.Length);
                 Console.WriteLine("Intel length: " + t2.Result.Length);
             }
@@ -31,7 +32,7 @@ namespace DownloadingWebPages
             try
             {
                 using (var client = new WebClient())
-                using (var registration = ct.Register(() => client.CancelAsync()))
+                using (var registration = ct.Register(() => { Console.WriteLine("Canceling client..."); client.CancelAsync();}))
                 {
                     var content = await client.DownloadStringTaskAsync(uri);
                     return content;

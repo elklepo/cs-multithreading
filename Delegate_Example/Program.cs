@@ -19,7 +19,6 @@ namespace Delegate_Example
             Console.WriteLine($"Sending e-mail: {msg}");
         }
 
-
         static void Main(string[] args)
         {
             d_send = SendSms;
@@ -40,7 +39,6 @@ namespace Delegate_Example
             d_send("Hello");
 
             d_send -= SendSms;
-            d_send -= SendEmail;
             d_send -= SendEmail;
             d_send("Bye");
 

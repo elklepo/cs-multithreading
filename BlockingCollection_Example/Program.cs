@@ -18,29 +18,32 @@ namespace BlockingCollection_Example
         public static void ConsumerProducerTest()
         {
             var buff = new BlockingCollection<int>();
-            Task tProducer = Task.Run(() => Producer(buff));
-            Task tConsumer = Task.Run(() => Consumer(buff));
-            Task.WaitAll(tProducer, tConsumer);
+            Task aProducer = Task.Run(() => Producer(buff, "A", 0));
+            Task bProducer = Task.Run(() => Producer(buff, "B", 5));
+
+            Task cConsumer = Task.Run(() => Consumer(buff, "C"));
+            Task.WaitAll(aProducer, bProducer, cConsumer);
         }
 
-        public static void Consumer(BlockingCollection<int> buff)
+        public static void Consumer(BlockingCollection<int> buff, string name)
         {
             foreach (var item in buff.GetConsumingEnumerable())
             {
-                Console.WriteLine($"- {item}");
+                Console.WriteLine($"-{name} {item}");
+                Thread.Sleep(TimeSpan.FromMilliseconds(150));
             }
-            Console.WriteLine("Consumer finished.");
+            Console.WriteLine($"Consumer {name} finished.");
         }
 
-        public static void Producer(BlockingCollection<int> buff)
+        public static void Producer(BlockingCollection<int> buff, string name, int start)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = start; i < start + 5; i++)
             {
                 buff.Add(i);
-                Console.WriteLine($"+ {i}");
+                Console.WriteLine($"+{name} {i}");
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
             }
-            Console.WriteLine("Producer finished.");
+            Console.WriteLine($"Producer {name} finished.");
             buff.CompleteAdding();
         }
     }

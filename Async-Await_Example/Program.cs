@@ -9,13 +9,13 @@ namespace AsyncAwait_Example
         static void Main(string[] args)
         {
             //Workaround for not being able to declare main() as async
-            Workaround();
-
+            var t = Workaround();
+            //t.Wait();
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] Press key to exit...");
             Console.ReadKey();
         }
 
-        private static async void Workaround()
+        private static async Task Workaround()
         {
             var t1 = AsyncStrlen("FIRST");
             var t2 = AsyncStrlen("SECOND");

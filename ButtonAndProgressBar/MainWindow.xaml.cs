@@ -42,7 +42,6 @@ namespace ButtonAndProgressBar
                 progressBar.Dispatcher.Invoke(
                     () => progressBar.Value = i
                     );
-
             }
         }
         private Task CalculateAsync()

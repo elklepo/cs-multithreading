@@ -6,11 +6,22 @@ using System.Threading.Tasks;
 
 namespace _00_UndefinedBehaviour
 {
+    /*
+     * Based on my question on StackOverflow:
+     * https://stackoverflow.com/questions/43802728/exception-thrown-in-catch-and-finally-clr-behavior-vs-try-catch-block
+     */
     class Program
     {
         static void Main(string[] args)
         {
-            MakeMess();
+            //try
+            //{
+                MakeMess();
+            //}
+            //catch
+            //{
+            //    Console.WriteLine("hellO!");
+            //}
         }
 
         private static void MakeMess()
