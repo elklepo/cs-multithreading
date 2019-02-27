@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_DownloadingWebPages", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_ButtonAndProgressBar", "ButtonAndProgressBar\08_ButtonAndProgressBar.csproj", "{A0DE901D-9FE2-4649-B7A9-BEEEAB0949E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_Source-Observer", "Source-Observer_Example\13_Source-Observer.csproj", "{2482C388-30B4-4453-A523-4C548621D182}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_Reactive_Example", "Reactive_Example\14_Reactive_Example.csproj", "{A88DD7CA-990E-47F3-B316-B4B9970BA8D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_ReactiveFileWatcher", "ReactiveFileWatcher\15_ReactiveFileWatcher.csproj", "{A3D8BCDD-B88D-45D4-B305-E4FC3DF8C8E7}"
@@ -89,10 +87,6 @@ Global
 		{A0DE901D-9FE2-4649-B7A9-BEEEAB0949E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0DE901D-9FE2-4649-B7A9-BEEEAB0949E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0DE901D-9FE2-4649-B7A9-BEEEAB0949E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2482C388-30B4-4453-A523-4C548621D182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2482C388-30B4-4453-A523-4C548621D182}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2482C388-30B4-4453-A523-4C548621D182}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2482C388-30B4-4453-A523-4C548621D182}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A88DD7CA-990E-47F3-B316-B4B9970BA8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A88DD7CA-990E-47F3-B316-B4B9970BA8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A88DD7CA-990E-47F3-B316-B4B9970BA8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU

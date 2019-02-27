@@ -22,10 +22,10 @@ namespace ParallelForEach_Example
             {
                 "http://wp.pl",
                 "http://intel.com",
-                "http://3lk.pl",
-                "http://policja.pl",
-                "http://pg.gda.pl",
-                "http://ztm.pl",
+                "http://f1.com",
+                "http://google.com",
+                "http://o2.pl",
+                "http://youtube.com",
                 "http://reddit.com",
                 "http://wykop.pl",
             };
@@ -39,8 +39,6 @@ namespace ParallelForEach_Example
             });
 
 
-            //The following is crazy shit and everyone will kill You during review - but it's cool :)
-            
             Parallel.ForEach(urls,
             () => new WebClient(),
             (url, loopstate, index, client) =>

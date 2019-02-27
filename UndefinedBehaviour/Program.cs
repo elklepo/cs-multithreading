@@ -14,14 +14,14 @@ namespace UndefinedBehaviour_Example
     {
         static void Main(string[] args)
         {
-            //try
-            //{
-            MakeMess();
-            //}
-            //catch
-            //{
-            //    Console.WriteLine("hellO!");
-            //}
+            try
+            {
+                MakeMess();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private static void MakeMess()

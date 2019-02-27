@@ -25,7 +25,7 @@ namespace Thread_Example
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] starting work...");
 
-            Thread.Sleep(TimeSpan.FromSeconds(3));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
 
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] ...finished");
         }

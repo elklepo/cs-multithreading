@@ -11,74 +11,65 @@ namespace Reactive_Example
     {
         static void Main(string[] args)
         {
-            TimeSample();
+            Example_Subject();
 
             Console.WriteLine("Press key to exit...");
             Console.ReadKey();
 
         }
 
-        private static void TimeSample()
+        private static void Example_Random()
         {
             var random = new Random();
-            var baseSource = Observable
-                .Interval(TimeSpan.FromSeconds(0.5))
-                .Select(x => random.Next(1, 100));
+            var randomIntGenerator = Observable
+                .Interval(TimeSpan.FromSeconds(1))
+                .Select(x => random.Next());
 
-            var source = new ReplaySubject<int>(NewThreadScheduler.Default);
-            baseSource.Subscribe(source);
+            var randomIntSource = new ReplaySubject<int>(NewThreadScheduler.Default);
+            randomIntGenerator.Subscribe(randomIntSource);
 
-            var sub1 = source.Subscribe(item => Console.WriteLine($"+++>[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"));
+            var randomCharSource = randomIntSource.Select(n => (char)((n % 94) + 33));
 
-            // FILTROWANIE
-            var filtered = source
-                .Where(n => n > 20)
-                .Where(n => n < 50);
-            filtered.Subscribe(item => Console.WriteLine($"--->[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"));
+            var randomCharPrinter = randomCharSource.Subscribe(item => Console.WriteLine(item));
 
-            var buffered = source.Buffer(3); //.Buffer(xxxx, 1); for 1 elem shift. xxxx can be number of elements or TimeSpan
-            buffered.Subscribe(item => Console.WriteLine($"===>[{Thread.CurrentThread.ManagedThreadId}] Received: {String.Join(", ", item)}"));
+            var randomEvenIntPrinter = randomIntSource
+                .Where(n => n % 2 == 0)
+                .Subscribe(item => Console.WriteLine(item));
 
-            //"awdgbwe3houerfwe4gfvwsedfcjhasd;'lkjwdfnadckvNISdmazs:dnkdsnfgpoWSDAlskn"
-            //    .ToObservable()
-            //    .Buffer(3)
-            //    .Subscribe(item => Console.WriteLine($"ebe>[{Thread.CurrentThread.ManagedThreadId}] Received: {String.Join(", ", item)}"));
+            var randomThreeIntsPrinter = randomIntSource
+                .Buffer(3)
+                .Subscribe(item => Console.WriteLine(String.Join(", ", item)));
         }
 
-        private static void SubjectSample()
+        private static void Example_Subject()
         {
-            var source = new ReplaySubject<string>(NewThreadScheduler.Default); //gorace, ReplySubject to zimne zrodlo
+            var source = new ReplaySubject<string>(NewThreadScheduler.Default); // Subject
 
-            source.OnNext("Before");
+            source.OnNext("no subs");
 
             var sub1 = source.Subscribe(
                 item => Console.WriteLine($"--->[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"),
                 e => Console.WriteLine($"--->[{Thread.CurrentThread.ManagedThreadId}] Exception: {e.Message}"),
                 () => Console.WriteLine($"<---[{Thread.CurrentThread.ManagedThreadId}] Finished."));
 
-
-            source.OnNext("Hello");
-            source.OnNext("World");
+            source.OnNext("only one sub");
 
             var sub2 = source.Subscribe(
                 item => Console.WriteLine($"+++>[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"),
                 e => Console.WriteLine($"+++>[{Thread.CurrentThread.ManagedThreadId}] Exception: {e.Message}"),
                 () => Console.WriteLine($"<+++[{Thread.CurrentThread.ManagedThreadId}] Finished."));
 
-            source.OnNext("Siemanko");
-            source.OnNext("Siema");
+            source.OnNext("two subs!");
 
             var sub3 = source.Subscribe(
                 item => Console.WriteLine($"===>[{Thread.CurrentThread.ManagedThreadId}] Received: {item}"),
                 e => Console.WriteLine($"===>[{Thread.CurrentThread.ManagedThreadId}] Exception: {e.Message}"),
                 () => Console.WriteLine($"<===[{Thread.CurrentThread.ManagedThreadId}] Finished."));
 
-            sub1.Dispose();
-
-            source.OnNext("Wyjazd");
-            source.OnNext("Do domu.");
-
+            source.OnNext("wow! three subscribers!");
             source.OnCompleted();
+
+            Console.WriteLine("<--- DONE --->");
 
         }
     }

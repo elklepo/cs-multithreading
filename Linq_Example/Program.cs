@@ -13,13 +13,15 @@ namespace Linq_Example
             var lPerson = new List<Person>();
             PopulatePerson(lPerson);
 
+            // LINQ
             var filtered = lPerson.Where(p => p.m_name.StartsWith("A") && p.m_gender == Person.Gender.Male);
 
+            // LINQ to SQL
             var filtered2 = from person in lPerson
                             where person.m_name.StartsWith("A") &&
                                   person.m_gender == Person.Gender.Male
                             select person;
-            //filtered and filtered2 are equal
+            // filtered and filtered2 are equal
 
             foreach (var person in filtered2)
             {

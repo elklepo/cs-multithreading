@@ -34,8 +34,8 @@ namespace InterruptingTasks_Example
         {
             for (int i = 0; ; i++)
             {
-                //ct.ThrowIfCancellationRequested(); // or just check cancellation token and gracefully finish
-                                                    // but then task status will be RunToCompletion instead of Faulted.
+                ct.ThrowIfCancellationRequested(); // or just check cancellation token and gracefully finish
+                                                   // but then task status will be RunToCompletion instead of Faulted.
                 Console.Write("\r \r" + @"|/-\|/-\"[i % 8]);
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
             }

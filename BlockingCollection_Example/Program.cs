@@ -9,42 +9,42 @@ namespace BlockingCollection_Example
     {
         static void Main(string[] args)
         {
-            Task.Run(() => ConsumerProducerTest());
+            Task.Run(() => Example_ConsumerProducer());
 
             Console.WriteLine("Press key to exit...");
             Console.ReadKey();
         }
 
-        public static void ConsumerProducerTest()
+        public static void Example_ConsumerProducer()
         {
-            var buff = new BlockingCollection<int>();
-            Task aProducer = Task.Run(() => Producer(buff, "A", 0));
-            Task bProducer = Task.Run(() => Producer(buff, "B", 5));
+            var bucket = new BlockingCollection<int>();
 
-            Task cConsumer = Task.Run(() => Consumer(buff, "C"));
-            Task.WaitAll(aProducer, bProducer, cConsumer);
+            Task producer = Task.Run(() => Producer(bucket, 0, 15));
+            Task consumer = Task.Run(() => Consumer(bucket));
+
+            Task.WaitAll(producer, consumer);
         }
 
-        public static void Consumer(BlockingCollection<int> buff, string name)
+        public static void Consumer(BlockingCollection<int> bucket)
         {
-            foreach (var item in buff.GetConsumingEnumerable())
+            foreach (var i in bucket.GetConsumingEnumerable())
             {
-                Console.WriteLine($"-{name} {item}");
-                Thread.Sleep(TimeSpan.FromMilliseconds(150));
+                Console.WriteLine($"- {i}");
             }
-            Console.WriteLine($"Consumer {name} finished.");
+            Console.WriteLine($"Consumer finished.");
         }
 
-        public static void Producer(BlockingCollection<int> buff, string name, int start)
+        public static void Producer(BlockingCollection<int> bucket, int start, int stop)
         {
-            for (int i = start; i < start + 5; i++)
+            for (int i = start; i < stop; i++)
             {
-                buff.Add(i);
-                Console.WriteLine($"+{name} {i}");
+                bucket.Add(i);
+                Console.WriteLine($"+ {i}");
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
             }
-            Console.WriteLine($"Producer {name} finished.");
-            buff.CompleteAdding();
+            bucket.CompleteAdding();
+
+            Console.WriteLine($"Producer finished.");
         }
     }
 }
